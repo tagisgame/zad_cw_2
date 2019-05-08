@@ -1,23 +1,24 @@
-//Final variable
-var result = "";
+//Includowanie readline-sync do skryptu
+  const readlineSync = require('readline-sync');
 
-//Input
-[,,num] = process.argv;
-i_num = parseInt(num);
+//Zmienna finalnie wyświetlana jako wynik działania programu
+  var result = "";
 
-//Program
-if(i_num > 0){
+//Pobieranie wartości od użytkownika
+  num = readlineSync.questionInt("Podaj dodatnią liczbę całkowitą: ");
+  //Walidacja wejścia (liczba musi być dodatnia)
+  while(num <= 0)
+    num = readlineSync.questionInt("Podaj DODATNIĄ! liczbę całkowitą: ");
 
-  let power = 1; //Result of 2^n
+//Operacje wykonywane przez program
+  let power = 1; //wynik potęgowania dwójki
 
-  //2^n < number given by user
-  while(power < i_num){
-    result += power + ", ";
-    power *= 2;
-  }
-} else {
-  result = "Niepoprawne dane wejściowe (A > 0)."
-}
+  //potęgowanie dwójki dopóki wynik nie przekroczy wartości podanej przez użytkownika
+    while(power < num){
+      //Konstrukcja wyniku działania
+        result += power + ", ";
+      power *= 2;
+    }
 
-//Print result
+//Wyświetlanie wyniku działania
 console.log(result)
