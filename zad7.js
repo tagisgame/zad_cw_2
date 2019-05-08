@@ -1,4 +1,3 @@
-
 //Includowanie readline-sync do skryptu
   const readlineSync = require('readline-sync');
 
