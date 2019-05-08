@@ -31,6 +31,8 @@ if(i_a < i_b){
   "While: " + sumwhile + "\n" +
   "Do...While: " + sumdo + "\n" +
   "For: " + sumfor;
+} else {
+  result = "Niepoprawne dane wejściowe (A < B)."
 }
 
 //Print result
