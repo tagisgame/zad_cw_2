@@ -25,4 +25,4 @@ while(true){
   result = "Suma wprowadzonych liczb: " + sum;
 
 //Wyświetlanie wyniku działania
-  console.log(result)
+  console.log(result);
