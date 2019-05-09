@@ -1,39 +1,53 @@
-//Final variable
+// <editor-fold desc="Includowanie readline-sync">
+const readlineSync = require('readline-sync');
+// </editor-fold>
+
+//Zmienna finalnie wyświetlana jako wynik działania programu
 var result = "";
 
-//Input
-[,,a,b] = process.argv; //Numbers given by user
-i_a = parseInt(a);
-i_b = parseInt(b);
+// <editor-fold desc="Input">
+//Inputy podawane przez użytkownika
+var a = readlineSync.questionInt("Podaj poczatek zakresu: ");
+var b = readlineSync.questionInt("Podaj koniec zakresu: ");
 
-//Program
-if(i_a < i_b){
-  let sumwhile = 0; //Sum for while loop
-  let sumdo = 0; //Sum for do...while loop
-  let sumfor = 0; //Sum for for loop
-  //While loop
-  var i = i_a;
-  while(i <= i_b){
-    sumwhile += i;
-    i++
-  }
-  //Do...while loop
-  i = i_a;
-  do{
-    sumdo += i;
-    i++
-  } while(i <= i_b);
-  //For loop
-  for(let i = i_a; i <= i_b; i++)
-    sumfor += i;
+//Walidacja inputów
+while(a >= b){
+  console.log("Pierwsza liczba musi być mniejsza!")
+  var a = readlineSync.questionInt("Podaj poczatek zakresu: ");
+  var b = readlineSync.questionInt("Podaj koniec zakresu: ");
+}
+// </editor-fold>
 
-  result =
-  "While: " + sumwhile + "\n" +
-  "Do...While: " + sumdo + "\n" +
-  "For: " + sumfor;
-} else {
-  result = "Niepoprawne dane wejściowe (A < B)."
+// <editor-fold desc="Operacje wykonywane przez program">
+//Sumy dla trzech różnych pętli
+let sumwhile = 0;
+let sumdo = 0;
+let sumfor = 0;
+
+//Pętla while
+var i = a;
+while(i <= b){
+  sumwhile += i;
+  i++
 }
 
-//Print result
-console.log(result)
+//Pętla do...while
+i = a;
+do{
+  sumdo += i;
+  i++;
+} while(i <= b);
+
+//Petla for
+for(let i = a; i <= b; i++)
+  sumfor += i;
+// </editor-fold>
+
+//Konstruuowanie wiadomości końcowej
+result =
+"While: " + sumwhile + "\n" +
+"Do...While: " + sumdo + "\n" +
+"For: " + sumfor;
+
+//Wyświetlanie wyniku działania
+console.log(result);
