@@ -48,8 +48,7 @@ var gr1_count = Math.floor(amount_gr/1);
 amount_gr -= gr5_count * 1;
 // </editor-fold>
 
-//Konstruowanie wiadomości końcowej
-//Dla 5zl
+// <editor-fold desc="Konstruowanie wiadomości końcowej">
 if(zl5_count > 0) result+= zl5_count + " x 5zł\n";
 if(zl2_count > 0) result+= zl2_count + " x 2zł\n";
 if(zl1_count > 0) result+= zl1_count + " x 1zł\n";
@@ -59,6 +58,7 @@ if(gr10_count > 0) result+= gr10_count + " x 10gr\n";
 if(gr5_count > 0) result+= gr5_count + " x 5gr\n";
 if(gr2_count > 0) result+= gr2_count + " x 2gr\n";
 if(gr1_count > 0) result+= gr1_count + " x 1gr\n";
+// </editor-fold>
 
 //Wyswietlanie wyniku działania programu
 console.log(result);
