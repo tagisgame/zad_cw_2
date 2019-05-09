@@ -1,27 +1,28 @@
-//Includowanie readline-sync do skryptu
-  const readlineSync = require('readline-sync');
+// <editor-fold desc="Includowanie readline-sync">
+const readlineSync = require('readline-sync');
+// </editor-fold>
 
 //Zmienna finalnie wyświetlana jako wynik działania programu
-  var result = "";
+var result = "";
 
-//Pobieranie wartości od użytkownika
-  var index = 0; //indeks tablicy
-  var nums = []; //tablica wartości podanych przez użytkownika
+// <editor-fold desc="Operacje wykonywane przez program">
+var sum = 0;
 
-  //pętla do wprowadzania wartości, przerywa się kiedy wpisana wartość jest zerem
-    do{
-      nums[index] = readlineSync.questionInt(index == 0 ? "Podaj pierwszą liczbę: " : "Podaj kolejną liczbę: ")
-      index++;
-    }while(nums[index-1] != 0);
+while(true){
+  //Pobieranie liczby od użytkownika
+  num = readlineSync.questionInt("Podaj liczbę: ");
 
-//Operacje wykonywane przez program
-  //sumowanie wartości wpisanych przez użytkownika
-    var sum = 0;
-    for(let i = 0; i < index-1; i++)
-      sum += nums[i];
+  //Pętla zostaje przerwana, gdy liczba jest zerem
+  if(num == 0)
+    break;
 
-//Konstrukcja wyniku działania
+  //Dodanie do sumy
+  sum += num;
+}
+// </editor-fold>
+
+//Konstruuowanie wiadomości końcowej
   result = "Suma wprowadzonych liczb: " + sum;
 
 //Wyświetlanie wyniku działania
-  console.log(result)
+  console.log(result);
