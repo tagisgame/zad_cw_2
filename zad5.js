@@ -15,6 +15,7 @@ var avg = 0;
 var count = 0;
 
 while(true){
+  //Podanie kolejnej liczby
   let num = readlineSync.questionInt("Podaj " + (++count) + " liczbę: ")
 
   //Przerwanie pętli, gdy liczba jest zerem
