@@ -30,4 +30,4 @@ for(let y = starty; y < starty + h; y++){
 // </editor-fold>
 
 //Wyswietlanie wyniku działania programu
-console.log(result)
+console.log(result);

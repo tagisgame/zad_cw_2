@@ -7,14 +7,27 @@ var result = "";
 
 // <editor-fold desc="Input">
 //Inputy podawane przez użytkownika
-var num = readlineSync.questionInt("Podaj liczbę, aby poznać jej dzielniki: ");
+var height = readlineSync.questionInt("Podaj wysokość choinki: ");
 // </editor-fold>
 
 // <editor-fold desc="Operacje wykonywane przez program">
-result = "Oto dzielniki liczby " + num + "\n";
-//Wyznaczanie dzielników
-for(let i = 1; i <= num; i++){
-  if(num % i == 0) result += i + ", ";
+//Długość linii gwiazdek
+var linewidth = 1;
+
+//Rysowanie choinki
+for(let i = 0; i < height; i++){
+  //Puste miejsca
+  for(let j = 0; j < height - i; j++)
+    result += " ";
+
+  //Linia gwiazdek
+  for(let j = 0; j < linewidth; j++)
+    result += "*";
+
+  //Zwiększenie szerokości linii gwiazdek o 2;
+  linewidth += 2;
+
+  result += "\n";
 }
 // </editor-fold>
 

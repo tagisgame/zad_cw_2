@@ -54,4 +54,4 @@ result = "Suma cyfr liczby: " + sum + "\n" +
 "(PARZYSTE) " + evenavg + " - " + oddavg + " (NIEPARZYSTE)";
 
 //Wyswietlanie wyniku działania programu
-console.log(result)
+console.log(result);

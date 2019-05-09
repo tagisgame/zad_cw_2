@@ -27,4 +27,4 @@ result = (mdiv != 1) ? "Podana liczba nie jest liczbą pierwszą." : "Podana lic
 // </editor-fold>
 
 //Wyswietlanie wyniku działania programu
-console.log(result)
+console.log(result);
