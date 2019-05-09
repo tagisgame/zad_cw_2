@@ -1,49 +1,45 @@
-//Includowanie readline-sync do skryptu
-  const readlineSync = require('readline-sync');
+// <editor-fold desc="Includowanie readline-sync">
+const readlineSync = require('readline-sync');
+// </editor-fold>
 
 //Zmienna finalnie wyświetlana jako wynik działania programu
-  var result = "";
+var result = "";
 
-//Pobieranie wartości od użytkownika
-  var index = 0; //indeks tablicy
-  var nums = []; //tablica wartości podanych przez użytkownika
+// <editor-fold desc="Operacje wykonywane przez program">
+//Liczba min, max, suma i średnia
+var min = Number.MAX_VALUE;
+var max = Number.MIN_VALUE;
+var sum = 0;
+var avg = 0;
+//Liczba liczb w ciągu
+var count = 0;
 
-  //pętla do wprowadzania wartości, przerywa się kiedy wpisana wartość jest zerem
-    do{
-      nums[index] = readlineSync.questionInt(index == 0 ? "Podaj pierwszą liczbę: " : "Podaj kolejną liczbę: ")
-      index++;
-    }while(nums[index-1] != 0);
+while(true){
+  let num = readlineSync.questionInt("Podaj " + (++count) + " liczbę: ")
 
-//Operacje wykonywane przez program
-  //wyznacznie liczby najmniejszej i największej
-    //max
-    var max = 0;
-    for(let i = 0; i < index-1; i++){
-      if(nums[i] > max)
-        max = nums[i];
-    }
-    //min
-    var min = max;
-    for(let i = 0; i < index-1; i++){
-      if(nums[i] < min)
-        min = nums[i];
-    }
+  //Przerwanie pętli, gdy liczba jest zerem
+  if(num == 0)
+    break;
 
-  //wyznaczanie sumy i średniej
-    //suma
-    var sum = 0;
-    for(let i = 0; i < index-1; i++)
-      sum += nums[i];
+  //Sprawdzenie czy liczba jest najmniejsza/największa
+  if(num > max)
+    max = num;
+  else if(num < min)
+    min = num;
 
-    //srednia
-    var avg = sum / (index-1);
+  //Dodanie do sumy
+  sum += num;
+}
 
+//Wyznaczenie średniej
+avg = sum / (count-1);
+// </editor-fold>
 
-//Konstrukcja wyniku działania
+//Konstruuowanie wiadomości końcowej
   result = "Min: " + min + "\n" +
   "Max: " + max + "\n" +
   "Suma: " + sum + "\n" +
   "Średnia: " + avg;
 
 //Wyświetlanie wyniku działania
-  console.log(result)
+  console.log(result);
